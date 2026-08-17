@@ -1,0 +1,3374 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ஸ்ரீ சாய் இல்லம் | புதுமனைப் புகுவிழா</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Tamil:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root{
+    --cream:#FFF8E8;
+    --cream-light:#FFFDF7;
+    --cream-dark:#F4E8C9;
+
+    --green:#174A36;
+    --green-dark:#063D2A;
+    --green-deep:#03291D;
+
+    --gold:#C59A3D;
+    --gold-light:#E8CB78;
+    --gold-pale:#F5DEA0;
+
+    --brown:#76502C;
+    --text:#58665E;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    width:100%;
+    min-height:100vh;
+
+    margin:0;
+
+    font-family:
+        "Noto Serif Tamil",
+        serif;
+
+    background:var(--cream);
+
+    color:var(--text);
+
+    overflow-x:hidden;
+}
+
+button{
+    font-family:inherit;
+}
+
+
+/* =========================================================
+   FALLING FLOWERS
+========================================================= */
+
+.hero-house-image{
+    position:absolute;
+    z-index:4;
+
+    left:50%;
+    top:45%;
+
+    transform:translate(-50%, -50%);
+
+    width:520px;
+    max-width:70vw;
+    height:300px;
+
+    object-fit:contain;
+
+    filter:drop-shadow(0 18px 25px rgba(0,0,0,.35));
+
+    animation:houseFloat 4s ease-in-out infinite;
+}
+
+@keyframes houseFloat{
+    0%,100%{
+        transform:translate(-50%, -50%) translateY(0);
+    }
+
+    50%{
+        transform:translate(-50%, -50%) translateY(-8px);
+    }
+}
+.flowers{
+    position:fixed;
+
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:900;
+}
+
+.flower{
+    position:absolute;
+
+    top:-70px;
+
+    opacity:.8;
+
+    animation:
+        flowerFall
+        linear
+        infinite;
+}
+
+.flower:nth-child(1){
+    left:2%;
+    font-size:20px;
+    animation-duration:8s;
+}
+
+.flower:nth-child(2){
+    left:11%;
+    font-size:28px;
+    animation-duration:11s;
+    animation-delay:2s;
+}
+
+.flower:nth-child(3){
+    left:21%;
+    font-size:18px;
+    animation-duration:9s;
+    animation-delay:4s;
+}
+
+.flower:nth-child(4){
+    left:31%;
+    font-size:25px;
+    animation-duration:12s;
+    animation-delay:1s;
+}
+
+.flower:nth-child(5){
+    left:42%;
+    font-size:20px;
+    animation-duration:10s;
+    animation-delay:3s;
+}
+
+.flower:nth-child(6){
+    left:53%;
+    font-size:27px;
+    animation-duration:13s;
+    animation-delay:5s;
+}
+
+.flower:nth-child(7){
+    left:65%;
+    font-size:21px;
+    animation-duration:9s;
+    animation-delay:2s;
+}
+
+.flower:nth-child(8){
+    left:76%;
+    font-size:26px;
+    animation-duration:12s;
+    animation-delay:6s;
+}
+
+.flower:nth-child(9){
+    left:87%;
+    font-size:19px;
+    animation-duration:10s;
+    animation-delay:1s;
+}
+
+.flower:nth-child(10){
+    left:96%;
+    font-size:28px;
+    animation-duration:14s;
+    animation-delay:4s;
+}
+
+@keyframes flowerFall{
+
+    0%{
+        transform:
+            translateY(-100px)
+            translateX(0)
+            rotate(0deg);
+
+        opacity:0;
+    }
+
+    10%{
+        opacity:.85;
+    }
+
+    25%{
+        transform:
+            translateY(25vh)
+            translateX(35px)
+            rotate(90deg);
+    }
+
+    50%{
+        transform:
+            translateY(50vh)
+            translateX(-35px)
+            rotate(180deg);
+    }
+
+    75%{
+        transform:
+            translateY(75vh)
+            translateX(25px)
+            rotate(270deg);
+    }
+
+    100%{
+        transform:
+            translateY(110vh)
+            translateX(-20px)
+            rotate(360deg);
+
+        opacity:0;
+    }
+}
+
+
+/* =========================================================
+   OPENING SCREEN
+========================================================= */
+
+.opening{
+    position:fixed;
+
+    inset:0;
+
+    z-index:1000;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:20px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #fffdf7 0%,
+            #faf1d9 50%,
+            #eee0b9 100%
+        );
+
+    transition:
+        opacity .8s ease,
+        visibility .8s ease;
+}
+
+.opening.hide{
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+}
+
+
+/* =========================================================
+   OPENING CARD
+========================================================= */
+
+.opening-card{
+
+    position:relative;
+
+    width:min(94vw,570px);
+
+    padding:
+        30px
+        25px
+        30px;
+
+    text-align:center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fffdf8,
+            #f7edd5
+        );
+
+    border:
+        2px solid
+        var(--gold);
+
+    box-shadow:
+        0 30px 80px
+        rgba(70,45,15,.25),
+
+        inset 0 0 0 6px
+        rgba(197,154,61,.08);
+
+    animation:
+        cardEnter
+        .9s
+        ease;
+}
+
+
+/* INNER BORDER */
+
+.opening-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:9px;
+
+    border:
+        1px solid
+        rgba(197,154,61,.6);
+
+    pointer-events:none;
+}
+
+
+/* CORNERS */
+
+.corner{
+
+    position:absolute;
+
+    color:var(--gold);
+
+    font-size:23px;
+
+    z-index:10;
+}
+
+.corner.tl{
+    top:15px;
+    left:15px;
+}
+
+.corner.tr{
+    top:15px;
+    right:15px;
+}
+
+.corner.bl{
+    bottom:15px;
+    left:15px;
+}
+
+.corner.br{
+    bottom:15px;
+    right:15px;
+}
+
+
+/* =========================================================
+   OPENING CONTENT
+========================================================= */
+
+.opening-content{
+    position:relative;
+
+    z-index:5;
+}
+
+.om{
+
+    font-size:42px;
+
+    color:var(--gold);
+
+    text-shadow:
+        0 0 18px
+        rgba(197,154,61,.4);
+
+    animation:
+        omGlow
+        2s
+        infinite
+        alternate;
+}
+
+@keyframes omGlow{
+
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.08);
+    }
+}
+
+
+.god-name{
+
+    margin-top:3px;
+
+    color:var(--green);
+
+    font-size:16px;
+}
+
+
+.gold-line{
+
+    width:90px;
+
+    height:1px;
+
+    margin:17px auto;
+
+    background:var(--gold);
+}
+
+
+/* =========================================================
+   OPENING VIDEO
+   NO PLAY BUTTON
+========================================================= */
+
+.opening-video{
+    width:100%;
+    height:auto;
+    display:block;
+    object-fit:contain;
+    object-position:center;
+    border-radius:15px;
+    background:transparent;
+}
+        rgba(55,40,20,.20);
+}
+
+
+.opening-video{
+
+    width:100%;
+
+    height:100%;
+
+    display:block;
+
+    object-fit:cover;
+
+    object-position:center;
+
+    background:#062F22;
+}
+
+
+/* =========================================================
+   OPENING TITLE
+========================================================= */
+
+.opening-title{
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:4px;
+
+    color:var(--green);
+
+    font-size:
+        clamp(
+            30px,
+            7vw,
+            45px
+        );
+
+    line-height:1.25;
+
+    font-weight:800;
+}
+
+.opening-title span{
+
+    color:var(--gold);
+}
+
+
+.house-name{
+
+    margin-top:9px;
+
+    color:var(--brown);
+
+    font-size:18px;
+}
+
+
+.opening-date{
+
+    margin-top:7px;
+
+    color:#69736C;
+
+    font-size:13px;
+}
+
+
+/* =========================================================
+   OPEN BUTTON
+========================================================= */
+
+.open-button{
+
+    margin-top:21px;
+
+    padding:
+        14px
+        30px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold),
+            var(--gold-light)
+        );
+
+    color:var(--green-dark);
+
+    font-size:16px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 10px 28px
+        rgba(197,154,61,.3);
+
+    animation:
+        buttonGlow
+        2.2s
+        infinite;
+
+    transition:.25s;
+}
+
+.open-button:hover{
+
+    transform:
+        translateY(-3px)
+        scale(1.03);
+}
+
+@keyframes buttonGlow{
+
+    0%,100%{
+        box-shadow:
+            0 10px 28px
+            rgba(197,154,61,.25);
+    }
+
+    50%{
+        box-shadow:
+            0 12px 38px
+            rgba(197,154,61,.55);
+    }
+}
+
+
+@keyframes cardEnter{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            scale(.88)
+            translateY(30px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            scale(1)
+            translateY(0);
+    }
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+    position:relative;
+
+    width:100%;
+
+    height:100svh;
+
+    min-height:650px;
+
+    overflow:hidden;
+
+    background:#061F17;
+}
+
+
+.hero-video{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    z-index:1;
+}
+
+
+.hero-video video{
+
+    width:100%;
+
+    height:100%;
+
+    display:block;
+
+    object-fit:cover;
+}
+
+
+/* HERO OVERLAY */
+
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:2;
+
+    pointer-events:none;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,.22),
+            transparent 40%,
+            rgba(3,41,29,.88)
+        );
+}
+
+
+/* =========================================================
+   HERO TOP
+========================================================= */
+
+.hero-top{
+
+    position:absolute;
+
+    top:27px;
+
+    left:0;
+
+    right:0;
+
+    z-index:10;
+
+    text-align:center;
+}
+
+
+.hero-om{
+
+    color:var(--gold-light);
+
+    font-size:40px;
+}
+
+
+.hero-god{
+
+    color:#FFF1C5;
+
+    font-size:15px;
+
+    text-shadow:
+        0 2px 8px
+        rgba(0,0,0,.7);
+}
+
+
+/* =========================================================
+   HERO TEXT
+========================================================= */
+
+.hero-text{
+
+    position:absolute;
+
+    left:0;
+
+    right:0;
+
+    bottom:0;
+
+    z-index:10;
+
+    text-align:center;
+
+    padding:
+        35px
+        20px
+        65px;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(3,41,29,.96),
+            rgba(3,41,29,.55),
+            transparent
+        );
+}
+
+
+.hero-small{
+
+    color:#FFF0C0;
+
+    font-size:16px;
+}
+
+
+.hero-title{
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:6px;
+
+    margin-top:6px;
+
+    color:#FFF8DF;
+
+    font-size:
+        clamp(
+            38px,
+            8vw,
+            72px
+        );
+
+    line-height:1.1;
+
+    font-weight:800;
+}
+
+
+.hero-title span{
+
+    color:var(--gold-light);
+}
+
+
+.hero-house{
+
+    margin-top:10px;
+
+    color:#F4DFA7;
+
+    font-size:
+        clamp(
+            18px,
+            3vw,
+            26px
+        );
+}
+
+
+.hero-date{
+
+    margin-top:10px;
+
+    color:#fff;
+
+    font-size:15px;
+}
+
+
+/* =========================================================
+   COMMON SECTION
+========================================================= */
+
+.section{
+
+    width:100%;
+
+    padding:
+        85px
+        5vw;
+
+    text-align:center;
+}
+
+
+.section-inner{
+
+    width:100%;
+
+    max-width:1100px;
+
+    margin:auto;
+}
+
+
+.label{
+
+    color:var(--gold);
+
+    font-size:12px;
+
+    letter-spacing:4px;
+}
+
+
+.section-title{
+
+    margin-top:10px;
+
+    color:var(--green);
+
+    font-size:
+        clamp(
+            28px,
+            4vw,
+            43px
+        );
+}
+
+
+.divider{
+
+    width:100px;
+
+    height:1px;
+
+    margin:
+        24px auto
+        35px;
+
+    background:var(--gold);
+}
+
+
+/* =========================================================
+   INVITATION
+========================================================= */
+
+.invitation{
+
+    background:var(--cream);
+}
+
+
+.message{
+
+    max-width:880px;
+
+    margin:auto;
+
+    color:var(--text);
+
+    font-size:
+        clamp(
+            15px,
+            2vw,
+            19px
+        );
+
+    line-height:2.15;
+}
+
+
+.message strong{
+
+    color:var(--green);
+}
+
+
+.house-highlight{
+
+    max-width:900px;
+
+    margin:
+        42px auto;
+
+    padding:
+        30px 20px;
+
+    border-top:
+        1px solid
+        var(--gold);
+
+    border-bottom:
+        1px solid
+        var(--gold);
+}
+
+
+.house-highlight small{
+
+    color:var(--gold);
+
+    letter-spacing:3px;
+}
+
+
+.house-highlight h2{
+
+    margin-top:8px;
+
+    color:var(--green);
+
+    font-size:
+        clamp(
+            28px,
+            4vw,
+            42px
+        );
+}
+
+
+/* =========================================================
+   COUNTDOWN
+========================================================= */
+
+.countdown{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--green-dark),
+            var(--green)
+        );
+
+    color:white;
+}
+
+
+.count-title{
+
+    color:var(--gold-light);
+
+    font-size:
+        clamp(
+            25px,
+            4vw,
+            39px
+        );
+}
+
+
+.count-sub{
+
+    margin-top:6px;
+
+    color:#DCE8E0;
+}
+
+
+.count-grid{
+
+    width:100%;
+
+    max-width:950px;
+
+    margin:35px auto 0;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:18px;
+}
+
+
+.time-box{
+
+    min-height:135px;
+
+    border:
+        1px solid
+        rgba(232,203,120,.45);
+
+    border-radius:22px;
+
+    background:
+        rgba(255,255,255,.06);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    animation:
+        floatTime
+        3s
+        infinite
+        ease-in-out;
+}
+
+
+.time-box:nth-child(2){
+    animation-delay:.2s;
+}
+
+.time-box:nth-child(3){
+    animation-delay:.4s;
+}
+
+.time-box:nth-child(4){
+    animation-delay:.6s;
+}
+
+
+@keyframes floatTime{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-7px);
+    }
+}
+
+
+.number{
+
+    color:var(--gold-light);
+
+    font-family:Georgia,serif;
+
+    font-size:
+        clamp(
+            30px,
+            5vw,
+            55px
+        );
+
+    font-weight:bold;
+}
+
+
+.time-label{
+
+    margin-top:8px;
+
+    color:#DCE8E0;
+
+    font-size:11px;
+
+    letter-spacing:2px;
+}
+
+
+/* =========================================================
+   TIMING
+========================================================= */
+
+.timing{
+
+    background:var(--cream-light);
+}
+
+
+.timing-date{
+
+    color:var(--green);
+
+    font-size:24px;
+}
+
+
+.timing-time{
+
+    margin-top:15px;
+
+    color:var(--gold);
+
+    font-family:Georgia,serif;
+
+    font-size:
+        clamp(
+            35px,
+            6vw,
+            62px
+        );
+
+    font-weight:bold;
+}
+
+
+.timing-small{
+
+    margin-top:7px;
+
+    color:var(--brown);
+}
+
+
+.timing-details{
+
+    margin-top:25px;
+
+    color:#66736B;
+
+    line-height:2;
+}
+
+
+/* =========================================================
+   VENUE
+========================================================= */
+
+.venue{
+
+    background:
+        linear-gradient(
+            180deg,
+            #FFFDF7,
+            #F4E8C9
+        );
+}
+
+
+.venue-card{
+
+    width:100%;
+
+    max-width:1000px;
+
+    margin:
+        35px auto
+        0;
+
+    padding:45px 20px;
+
+    background:#fff;
+
+    border:
+        1px solid
+        rgba(197,154,61,.4);
+
+    border-radius:28px;
+
+    box-shadow:
+        0 20px 45px
+        rgba(80,50,20,.08);
+}
+
+
+.venue-icon{
+    font-size:55px;
+}
+
+
+.venue-card h3{
+
+    margin-top:10px;
+
+    color:var(--green);
+
+    font-size:28px;
+}
+
+
+.venue-card p{
+
+    margin-top:12px;
+
+    color:#637067;
+
+    font-size:17px;
+
+    line-height:2;
+}
+
+
+.map-button{
+
+    display:inline-block;
+
+    margin-top:25px;
+
+    padding:
+        13px
+        28px;
+
+    border-radius:40px;
+
+    background:var(--green);
+
+    color:#fff;
+
+    text-decoration:none;
+}
+
+
+/* =========================================================
+   FAMILY
+========================================================= */
+
+.family{
+
+    background:var(--cream);
+}
+
+
+.family-content{
+
+    max-width:850px;
+
+    margin:auto;
+
+    padding:35px 20px;
+
+    border-left:
+        3px solid
+        var(--gold);
+
+    border-right:
+        3px solid
+        var(--gold);
+
+    color:#58665E;
+
+    line-height:2.1;
+}
+
+
+.family-content b{
+    .family-content b,
+.family-content p {
+    color: var(--green);
+}
+
+    color:var(--green);
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact{
+
+    background:var(--cream-light);
+}
+
+
+.contact-grid{
+
+    width:100%;
+
+    max-width:1000px;
+
+    margin:35px auto 0;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:20px;
+}
+
+
+.contact-card{
+
+    padding:28px 15px;
+
+    background:#fff;
+
+    border:
+        1px solid
+        rgba(197,154,61,.35);
+
+    border-radius:22px;
+
+    transition:.3s;
+}
+
+
+.contact-card:hover{
+
+    transform:translateY(-7px);
+
+    box-shadow:
+        0 15px 30px
+        rgba(70,50,20,.1);
+}
+
+
+.contact-name{
+
+    color:var(--green);
+
+    font-size:18px;
+
+    font-weight:bold;
+}
+
+
+.contact-card a{
+
+    display:block;
+
+    margin-top:10px;
+
+    color:#657269;
+
+    text-decoration:none;
+
+    font-family:Arial,sans-serif;
+}
+
+
+/* =========================================================
+   FINAL
+========================================================= */
+
+.final{
+
+    position:relative;
+
+    width:100%;
+
+    min-height:70vh;
+
+    padding:
+        90px 5vw;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #155E42 0%,
+            #063D2A 55%,
+            #03291D 100%
+        );
+
+    color:white;
+}
+
+
+.final::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:20px;
+
+    border:
+        1px solid
+        rgba(232,203,120,.4);
+}
+
+
+.final-content{
+
+    position:relative;
+
+    z-index:2;
+}
+
+
+.lamp{
+
+    font-size:62px;
+
+    animation:
+        lampFloat
+        2s
+        infinite
+        alternate;
+}
+
+
+@keyframes lampFloat{
+
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(-9px);
+    }
+}
+
+
+.final h2{
+
+    margin-top:15px;
+
+    color:var(--gold-light);
+
+    font-size:
+        clamp(
+            27px,
+            4vw,
+            45px
+        );
+
+    line-height:1.6;
+}
+
+
+.final p{
+
+    margin-top:15px;
+
+    color:#F5F0DE;
+
+    font-size:16px;
+
+    line-height:2;
+}
+
+
+.final-love{
+
+    margin-top:27px;
+
+    color:#FFF0BC;
+
+    letter-spacing:3px;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px){
+
+    .opening{
+
+        padding:12px;
+    }
+
+
+    .opening-card{
+
+        width:min(92vw, 430px);
+
+        padding:
+            22px
+            16px
+            22px;
+
+        border-radius:18px;
+    }
+
+
+    .opening-content{
+
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+    }
+
+
+    .god-name{
+
+        font-size:15px;
+
+        line-height:1.6;
+
+        margin-top:6px;
+    }
+
+
+    .gold-line{
+
+        margin:14px auto 18px;
+    }
+
+
+    .opening-video-box{
+
+        width:100%;
+
+        height:auto;
+
+        min-height:170px;
+
+        margin:0 auto 12px;
+    }
+
+
+    .opening-video{
+
+        width:100%;
+
+        height:100%;
+
+        min-height:170px;
+
+        object-fit:cover;
+    }
+
+
+    .opening-title{
+
+        font-size:clamp(28px, 9vw, 42px);
+
+        line-height:1.2;
+
+        letter-spacing:0;
+
+        text-align:center;
+    }
+
+
+    .opening-title span{
+
+        display:block;
+    }
+
+
+    .house-name{
+
+        font-size:clamp(16px, 5vw, 22px);
+
+        line-height:1.5;
+
+        margin-top:10px;
+    }
+
+
+    .opening-date{
+
+        font-size:12px;
+
+        line-height:1.8;
+
+        margin-top:8px;
+    }
+
+
+    .open-button{
+
+        margin-top:18px;
+
+        width:min(100%, 290px);
+
+        font-size:14px;
+
+        padding:
+            12px
+            18px;
+    }
+
+
+    .hero{
+
+        min-height:560px;
+    }
+
+
+    .hero-top{
+
+        top:18px;
+    }
+
+
+    .hero-om{
+
+        font-size:34px;
+    }
+
+
+    .hero-god{
+
+        font-size:13px;
+
+        line-height:1.5;
+    }
+
+
+    .hero-text{
+
+        position:relative;
+
+        left:auto;
+        right:auto;
+        bottom:auto;
+
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:flex-end;
+
+        padding:
+            26px
+            16px
+            52px;
+
+        background:
+            linear-gradient(
+                to top,
+                rgba(3,41,29,.96),
+                rgba(3,41,29,.72),
+                rgba(3,41,29,.2),
+                transparent
+            );
+    }
+
+
+    .hero-small{
+
+        font-size:14px;
+
+        line-height:1.6;
+    }
+
+
+    .hero-title{
+
+        font-size:clamp(30px, 9vw, 48px);
+
+        line-height:1.1;
+
+        margin-top:8px;
+    }
+
+
+    .hero-house-image{
+
+        position:relative;
+
+        left:auto;
+        top:auto;
+        transform:none;
+
+        display:block;
+
+        width:min(78vw, 310px);
+        max-width:310px;
+        height:auto;
+
+        margin:12px auto 0;
+    }
+
+
+    .hero-house{
+
+        margin-top:10px;
+
+        font-size:clamp(17px, 5vw, 22px);
+
+        line-height:1.5;
+    }
+
+
+    .hero-date{
+
+        margin-top:8px;
+
+        font-size:13px;
+
+        line-height:1.8;
+    }
+
+
+    .section{
+
+        padding:
+            65px
+            20px;
+    }
+
+
+    .count-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:12px;
+    }
+
+
+    .time-box{
+
+        min-height:105px;
+    }
+
+
+    .number{
+
+        font-size:32px;
+    }
+
+
+    .contact-grid{
+
+        grid-template-columns:1fr;
+    }
+
+
+    .final{
+
+        min-height:65vh;
+
+        padding:
+            70px 20px;
+    }
+
+
+    .final::before{
+
+        inset:10px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px){
+
+    .opening-video-box{
+
+        min-height:150px;
+    }
+
+
+    .opening-title{
+
+        font-size:26px;
+    }
+
+
+    .om{
+
+        font-size:35px;
+    }
+
+
+    .open-button{
+
+        font-size:13px;
+
+        padding:
+            11px
+            18px;
+    }
+
+
+    .hero-title{
+
+        font-size:clamp(27px, 8.5vw, 36px);
+    }
+}
+
+
+/* =========================================================
+   FINAL RESPONSIVE FIX
+   Keeps desktop design intact and fixes mobile overlap.
+   ========================================================= */
+
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+img, video {
+    max-width: 100%;
+}
+
+/* Opening video container */
+.opening-video-box {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto 14px;
+    overflow: hidden;
+    border-radius: 15px;
+    position: relative;
+}
+
+.opening-video {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    max-height: 42vh;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 15px;
+    background: transparent;
+}
+
+/* Main hero image */
+.hero-house-image {
+    display: block;
+    width: min(520px, 70vw);
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+@media (max-width: 768px) {
+
+    .opening {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100dvh;
+        min-height: 100dvh;
+        padding: 10px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        align-items: flex-start;
+        justify-content: center;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .opening-card {
+        width: min(94vw, 430px);
+        max-width: 430px;
+        max-height: none;
+        margin: 10px auto;
+        padding: 20px 14px 22px;
+        flex: 0 0 auto;
+    }
+
+    .opening-content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        text-align: center;
+    }
+
+    .om {
+        font-size: clamp(32px, 10vw, 42px);
+        line-height: 1;
+    }
+
+    .god-name {
+        width: 100%;
+        font-size: clamp(14px, 4.2vw, 17px);
+        line-height: 1.6;
+        white-space: normal;
+    }
+
+    .gold-line {
+        width: 75px;
+        margin: 12px auto 14px;
+    }
+
+    .opening-video-box {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        max-height: 34vh;
+        margin: 0 auto 12px;
+    }
+
+    .opening-video {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        max-height: 34vh;
+        object-fit: contain;
+        object-position: center;
+    }
+
+    .opening-title {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+        margin: 2px 0 0;
+        padding: 0;
+        font-size: clamp(27px, 8.5vw, 42px);
+        line-height: 1.12;
+        font-weight: 800;
+        text-align: center;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+    .opening-title span {
+        display: block;
+        line-height: 1.12;
+    }
+
+    .house-name {
+        width: 100%;
+        margin-top: 9px;
+        font-size: clamp(16px, 4.8vw, 22px);
+        line-height: 1.45;
+        text-align: center;
+    }
+
+    .opening-date {
+        width: 100%;
+        margin-top: 7px;
+        font-size: clamp(11px, 3.5vw, 14px);
+        line-height: 1.7;
+        text-align: center;
+    }
+
+    .open-button {
+        width: min(100%, 290px);
+        margin: 16px auto 0;
+        padding: 12px 18px;
+        font-size: clamp(13px, 3.8vw, 15px);
+        line-height: 1.4;
+    }
+
+    /* Hero */
+    .hero {
+        position: relative;
+        width: 100%;
+        height: auto;
+        min-height: 100dvh;
+        overflow: hidden;
+    }
+
+    .hero-video {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    .hero-video video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .hero-top {
+        top: 16px;
+        left: 0;
+        right: 0;
+        padding: 0 14px;
+        z-index: 10;
+    }
+
+    .hero-om {
+        font-size: clamp(30px, 9vw, 40px);
+        line-height: 1;
+    }
+
+    .hero-god {
+        font-size: clamp(12px, 3.7vw, 15px);
+        line-height: 1.5;
+    }
+
+    .hero-text {
+        position: relative;
+        z-index: 10;
+        width: 100%;
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 0 14px 42px;
+        text-align: center;
+        background:
+            linear-gradient(
+                to top,
+                rgba(3,41,29,.97) 0%,
+                rgba(3,41,29,.80) 30%,
+                rgba(3,41,29,.35) 62%,
+                transparent 100%
+            );
+    }
+
+    .hero-small {
+        width: 100%;
+        font-size: clamp(13px, 4vw, 16px);
+        line-height: 1.5;
+    }
+
+    .hero-title {
+        width: 100%;
+        margin-top: 6px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+        font-size: clamp(30px, 9vw, 48px);
+        line-height: 1.08;
+        text-align: center;
+    }
+
+    .hero-title span {
+        display: block;
+        line-height: 1.08;
+    }
+
+    .hero-house-image {
+        position: static;
+        display: block;
+        width: min(75vw, 300px);
+        max-width: 300px;
+        height: auto;
+        margin: 12px auto 4px;
+        object-fit: contain;
+        transform: none;
+        animation: none;
+    }
+
+    .hero-house {
+        width: 100%;
+        margin-top: 6px;
+        font-size: clamp(16px, 5vw, 22px);
+        line-height: 1.45;
+        text-align: center;
+    }
+
+    .hero-date {
+        width: 100%;
+        margin-top: 6px;
+        font-size: clamp(12px, 3.8vw, 14px);
+        line-height: 1.7;
+        text-align: center;
+    }
+
+    /* Other sections */
+    .section {
+        width: 100%;
+        padding: 60px 18px;
+    }
+
+    .section-inner {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .message {
+        width: 100%;
+        font-size: 15px;
+        line-height: 2;
+    }
+
+    .house-highlight {
+        width: 100%;
+        padding: 24px 14px;
+    }
+
+    .count-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .time-box {
+        min-height: 100px;
+        width: 100%;
+    }
+
+    .number {
+        font-size: 30px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .venue-card,
+    .family-content,
+    .contact-card {
+        width: 100%;
+    }
+
+    .final {
+        min-height: 65vh;
+        padding: 65px 18px;
+    }
+}
+
+/* Small phones: 320px–420px */
+@media (max-width: 420px) {
+
+    .opening {
+        padding: 7px;
+    }
+
+    .opening-card {
+        width: 96vw;
+        margin: 6px auto;
+        padding: 17px 11px 18px;
+    }
+
+    .opening-video-box {
+        max-height: 29vh;
+        margin-bottom: 9px;
+    }
+
+    .opening-video {
+        max-height: 29vh;
+    }
+
+    .opening-title {
+        font-size: clamp(25px, 8.3vw, 34px);
+        line-height: 1.08;
+    }
+
+    .opening-title span {
+        line-height: 1.08;
+    }
+
+    .house-name {
+        font-size: clamp(15px, 4.7vw, 19px);
+        margin-top: 7px;
+    }
+
+    .opening-date {
+        font-size: clamp(10px, 3.3vw, 13px);
+        margin-top: 5px;
+    }
+
+    .open-button {
+        width: min(100%, 270px);
+        margin-top: 13px;
+        padding: 11px 15px;
+        font-size: 13px;
+    }
+
+    .hero-text {
+        padding-left: 11px;
+        padding-right: 11px;
+        padding-bottom: 32px;
+    }
+
+    .hero-house-image {
+        width: min(72vw, 270px);
+        max-width: 270px;
+        margin-top: 9px;
+    }
+
+    .hero-title {
+        font-size: clamp(27px, 8.5vw, 36px);
+    }
+
+    .hero-house {
+        font-size: clamp(15px, 4.7vw, 20px);
+    }
+
+    .hero-date {
+        font-size: 12px;
+    }
+
+    .section {
+        padding: 52px 15px;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+
+    .opening-card {
+        padding-left: 9px;
+        padding-right: 9px;
+    }
+
+    .opening-video-box {
+        max-height: 25vh;
+    }
+
+    .opening-video {
+        max-height: 25vh;
+    }
+
+    .opening-title {
+        font-size: 25px;
+    }
+
+    .open-button {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .hero-house-image {
+        width: min(68vw, 240px);
+        max-width: 240px;
+    }
+}
+
+
+/* DEITY IMAGE BELOW HERO GOD NAME */
+.hero-deity-image {
+    display: block;
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin: 12px auto 0;
+    position: relative;
+    z-index: 11;
+}
+
+@media (max-width: 768px) {
+    .hero-deity-image {
+        width: 130px;
+        height: 130px;
+        margin-top: 7px;
+    }
+}
+
+@media (max-width: 420px) {
+    .hero-deity-image {
+        width: 110px;
+        height: 110px;
+        margin-top: 5px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     OPENING CARD
+========================================================= -->
+
+<div
+    class="opening"
+    id="openingScreen">
+
+    <div class="opening-card">
+
+
+        <!-- GOLD CORNERS -->
+
+        <div class="corner tl">✦</div>
+
+        <div class="corner tr">✦</div>
+
+        <div class="corner bl">✦</div>
+
+        <div class="corner br">✦</div>
+
+
+        <div class="opening-content">
+
+
+            <!-- OM -->
+
+            <div class="om">
+                ॐ
+            </div>
+
+
+            <!-- GOD NAME -->
+
+            <div class="god-name">
+
+                ஸ்ரீ செல்லியம்மன் துணை
+
+            </div>
+
+
+            <div class="gold-line"></div>
+
+
+        <!-- VANAKKAM VIDEO -->
+<div class="opening-video-box">
+
+    <video
+        id="openingVideo"
+        class="opening-video"
+        src="./vanakam..mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto">
+    </video>
+
+</div>
+
+<!-- TITLE -->
+<div class="opening-title">
+    புதுமனைப்<br>
+    <span>புகுவிழா</span>
+</div>
+
+
+            <!-- HOUSE -->
+
+            <div class="house-name">
+
+                🏡 ஸ்ரீ சாய் இல்லம்
+
+            </div>
+
+
+            <!-- DATE -->
+
+            <div class="opening-date">
+
+                23 • 08 • 2026
+                |
+                ஞாயிற்றுக்கிழமை
+
+            </div>
+
+
+            <!-- OPEN BUTTON -->
+
+            <button
+                id="openInvitation"
+
+                class="open-button"
+
+                type="button">
+
+                ✨ அழைப்பிதழைத் திறக்க ✨
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     FALLING FLOWERS
+========================================================= -->
+
+<div class="flowers">
+
+    <div class="flower">🌸</div>
+    <div class="flower">🌺</div>
+    <div class="flower">🌼</div>
+    <div class="flower">🌸</div>
+    <div class="flower">🌿</div>
+    <div class="flower">🌺</div>
+    <div class="flower">🌼</div>
+    <div class="flower">🌸</div>
+    <div class="flower">🌺</div>
+    <div class="flower">🌼</div>
+
+</div>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero">
+
+
+    <!-- MAIN VIDEO -->
+
+    <div class="hero-video">
+
+        <video
+            id="mainVideo"
+
+            src="./vanakkam.mp4"
+
+            autoplay
+
+            muted
+
+            loop
+
+            playsinline
+
+            preload="auto">
+
+        </video>
+
+    </div>
+
+
+    <!-- OVERLAY -->
+
+    <div class="hero-overlay"></div>
+
+
+    <!-- TOP -->
+
+    <div class="hero-top">
+
+        <div class="hero-om">
+            ॐ
+        </div>
+
+        <div class="hero-god">
+
+            ஸ்ரீ செல்லியம்மன் துணை
+
+        </div>
+
+        <img
+            class="hero-deity-image"
+            src="./house.png"
+            alt="அம்மன்"
+        >
+
+    </div>
+
+
+    <!-- HERO TEXT -->
+
+    <div class="hero-text">
+
+        <div class="hero-small">
+
+            அன்புடன் அழைக்கின்றோம்
+
+        </div>
+
+
+        <h1 class="hero-title">
+
+            புதுமனைப்
+            <span>புகுவிழா</span>
+
+        </h1>
+
+        <img
+            class="hero-house-image"
+            src="./house finiii.png"
+            alt="ஸ்ரீ சாய் இல்லம்"
+        >
+
+
+        <div class="hero-house">
+
+            🏡 ஸ்ரீ சாய் இல்லம்
+
+        </div>
+
+
+        <div class="hero-date">
+
+            23 • 08 • 2026
+            |
+            ஞாயிற்றுக்கிழமை
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     INVITATION
+========================================================= -->
+
+<section class="section invitation">
+
+    <div class="section-inner">
+
+
+        <div class="label">
+
+            AN INVITATION FROM OUR HEART
+
+        </div>
+
+
+        <h2 class="section-title">
+
+            அன்புடையீர்...
+
+        </h2>
+
+
+        <div class="divider"></div>
+
+
+        <div class="message">
+
+            நிகழும் மங்களகரமான
+
+            <strong>ஸ்ரீ பராபவ வருடம்</strong>,
+
+            ஆவணி மாதம் 6-ம் நாள்
+
+            <strong>(23-08-2026)</strong>
+
+            ஞாயிற்றுக்கிழமை,
+
+            ஏகாதசி திதி, மூலம் நட்சத்திரம்,
+
+            சித்தயோகம் கூடிய
+
+            சுபயோக சுபதினத்தில்
+
+            அன்று அதிகாலை
+
+            <strong>
+                4.30 மணி முதல்
+                5.30 மணிக்குள்
+            </strong>
+
+            அமைந்த சுபவேளையில்
+
+        </div>
+
+
+        <div class="house-highlight">
+
+            <small>
+                எங்களது புதிய இல்லம்
+            </small>
+
+            <h2>
+
+                🏡 ஸ்ரீ சாய் இல்லம்
+
+            </h2>
+
+        </div>
+
+
+        <div class="message">
+
+            நாமக்கல் மாவட்டம்,
+            திருச்செங்கோடு,
+            பால்மடை அம்மாபாளையத்தில்
+            புதிதாக கட்டப்பட்டுள்ள எங்களது
+
+            <strong>
+                “ஸ்ரீ சாய் இல்லத்திற்கு”
+            </strong>
+
+            புதுமனைப் புகுவிழா நடைபெற
+            இருப்பதால் தாங்கள் தங்கள்
+            சுற்றமும் நட்பும் சூழ
+            வருகை தந்து விழாவினை சிறப்பிக்க
+
+            <strong>
+                அன்புடன் அழைக்கின்றோம்.
+            </strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     COUNTDOWN
+========================================================= -->
+
+<section class="section countdown">
+
+    <div class="section-inner">
+
+
+        <div class="count-title">
+
+            ✨ விழாவை நோக்கி... ✨
+
+        </div>
+
+
+        <div class="count-sub">
+
+            இன்னும் எத்தனை நாட்கள்?
+
+        </div>
+
+
+        <div class="count-grid">
+
+
+            <div class="time-box">
+
+                <div
+                    class="number"
+                    id="days">
+
+                    00
+
+                </div>
+
+                <div class="time-label">
+
+                    DAYS
+
+                </div>
+
+            </div>
+
+
+            <div class="time-box">
+
+                <div
+                    class="number"
+                    id="hours">
+
+                    00
+
+                </div>
+
+                <div class="time-label">
+
+                    HOURS
+
+                </div>
+
+            </div>
+
+
+            <div class="time-box">
+
+                <div
+                    class="number"
+                    id="minutes">
+
+                    00
+
+                </div>
+
+                <div class="time-label">
+
+                    MINUTES
+
+                </div>
+
+            </div>
+
+
+            <div class="time-box">
+
+                <div
+                    class="number"
+                    id="seconds">
+
+                    00
+
+                </div>
+
+                <div class="time-label">
+
+                    SECONDS
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     TIMING
+========================================================= -->
+
+<section class="section timing">
+
+    <div class="section-inner">
+
+
+        <div class="label">
+
+            AUSPICIOUS MUHURTHAM
+
+        </div>
+
+
+        <h2 class="section-title">
+
+            சுபவேளை
+
+        </h2>
+
+
+        <div class="divider"></div>
+
+
+        <div class="timing-date">
+
+            23 • 08 • 2026
+
+        </div>
+
+
+        <div class="timing-time">
+
+            4:30 AM — 5:30 AM
+
+        </div>
+
+
+        <div class="timing-small">
+
+            அதிகாலை
+
+        </div>
+
+
+        <div class="timing-details">
+
+            ஏகாதசி திதி<br>
+
+            மூலம் நட்சத்திரம்<br>
+
+            சித்தயோகம் கூடிய சுபயோக சுபதினம்
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     VENUE
+========================================================= -->
+
+<section class="section venue">
+
+    <div class="section-inner">
+
+
+        <div class="label">
+
+            VENUE
+
+        </div>
+
+
+        <h2 class="section-title">
+
+            விழா நடைபெறும் இடம்
+
+        </h2>
+
+
+        <div class="divider"></div>
+
+
+        <div class="venue-card">
+
+
+            <div class="venue-icon">
+
+                🏡
+
+            </div>
+
+
+            <h3>
+
+                ஸ்ரீ சாய் இல்லம்
+
+            </h3>
+
+
+            <p>
+
+                அம்மாபாளையம்,<br>
+
+                பால்மடை,<br>
+
+                திருச்செங்கோடு,<br>
+
+                நாமக்கல் மாவட்டம்.
+
+            </p>
+
+
+            <a
+                class="map-button"
+
+                href="https://www.google.com/maps/search/?api=1&query=Ammapalayam+Paalmadi+Tiruchengode"
+
+                target="_blank">
+
+                📍 வழியைப் பார்க்க
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FAMILY
+========================================================= -->
+
+<section class="section family">
+
+    <div class="section-inner">
+
+
+        <div class="label">
+
+            WITH WARM REGARDS
+
+        </div>
+
+
+        <h2 class="section-title">
+
+            தங்கள் அன்புள்ள...
+
+        </h2>
+
+
+        <div class="divider"></div>
+
+
+        <div class="family-content">
+
+
+            <p>
+
+                <b>M. ராஜா</b><br>
+
+                ஸ்ரீ சாட்டைமாரியம்மன் டெம்போ
+
+            </p>
+
+
+            <br>
+
+
+            <p>
+
+                <b>திருமதி. ரா. சாந்தி</b><br>
+                  சத்துணவு அமைப்பாளர்,
+அ.ஆ.மே. பள்ளி,
+திருச்செங்கோடு.
+
+
+            </p>
+
+   <br>
+
+
+   
+   <h4>மகள்</h4>
+<b>ரா. கீதா பிரபாகரன்</b><br>
+குட்டீஸ்<br>
+பி. பிரணேஷ்<br>
+பி. சர்வேஷ்
+
+
+            <br>
+
+            <br>
+
+
+           
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section class="section contact">
+
+    <div class="section-inner">
+
+
+        <div class="label">
+
+            CONTACT
+
+        </div>
+
+
+        <h2 class="section-title">
+
+            தொடர்புக்கு
+
+        </h2>
+
+
+        <div class="divider"></div>
+
+
+        <div class="contact-grid">
+
+
+            <div class="contact-card">
+
+                <div class="contact-name">
+
+                    Raja
+
+                </div>
+
+                <a href="tel:9385969943">
+
+                    📞 9385969943
+
+                </a>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <div class="contact-name">
+
+                    Pravin
+
+                </div>
+
+                <a href="tel:9790696487">
+
+                    📞 97906 96487
+
+                </a>
+
+            </div>
+
+
+            <div class="contact-card">
+
+                <div class="contact-name">
+
+                    Venkatesh
+
+                </div>
+
+                <a href="tel:9952648431">
+
+                    📞 99526 48431
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FINAL
+========================================================= -->
+
+<section class="final">
+
+    <div class="final-content">
+
+
+        <div class="lamp">
+
+            🪔
+
+        </div>
+
+
+        <h2>
+
+            தங்களின் அன்பான வருகையே<br>
+
+            எங்களுக்கு பெருமகிழ்ச்சி!
+
+        </h2>
+
+
+        <p>
+
+            குடும்பத்துடன் வருகை தந்து<br>
+
+            விழாவினை சிறப்பிக்குமாறு<br>
+
+            அன்புடன் கேட்டுக்கொள்கிறோம்.
+
+        </p>
+
+
+        <div class="final-love">
+
+            ❤️ அன்புடன் ❤️
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+
+/* =========================================================
+   GET ELEMENTS
+========================================================= */
+
+const openingScreen =
+    document.getElementById(
+        "openingScreen"
+    );
+
+
+const openInvitation =
+    document.getElementById(
+        "openInvitation"
+    );
+
+
+const openingVideo =
+    document.getElementById(
+        "openingVideo"
+    );
+
+
+const mainVideo =
+    document.getElementById(
+        "mainVideo"
+    );
+
+
+/* =========================================================
+   START VIDEOS
+========================================================= */
+
+window.addEventListener(
+    "load",
+    function(){
+
+        openingVideo.muted = true;
+
+        mainVideo.muted = true;
+
+
+        /*
+         Opening card video
+         autoplay
+        */
+
+        openingVideo.play().catch(
+            function(){
+                console.log(
+                    "Opening video needs interaction."
+                );
+            }
+        );
+
+
+        /*
+         Main hero video
+        */
+
+        mainVideo.play().catch(
+            function(){
+                console.log(
+                    "Main video waiting."
+                );
+            }
+        );
+
+    }
+);
+
+
+/* =========================================================
+   OPEN INVITATION
+========================================================= */
+
+openInvitation.addEventListener(
+    "click",
+    function(){
+
+        /*
+         Start main video
+        */
+
+        mainVideo.muted = true;
+
+        mainVideo.currentTime = 0;
+
+        mainVideo.play().catch(
+            function(){}
+        );
+
+
+        /*
+         Hide opening card
+        */
+
+        openingScreen.classList.add(
+            "hide"
+        );
+
+
+        /*
+         Go to top
+        */
+
+        window.scrollTo({
+            top:0,
+            behavior:"instant"
+        });
+
+    }
+);
+
+
+/* =========================================================
+   COUNTDOWN
+========================================================= */
+
+const targetDate =
+    new Date(
+        "August 23, 2026 04:30:00"
+    ).getTime();
+
+
+function updateCountdown(){
+
+    const now =
+        new Date().getTime();
+
+
+    const distance =
+        targetDate - now;
+
+
+    if(distance <= 0){
+
+        document.getElementById(
+            "days"
+        ).textContent = "00";
+
+        document.getElementById(
+            "hours"
+        ).textContent = "00";
+
+        document.getElementById(
+            "minutes"
+        ).textContent = "00";
+
+        document.getElementById(
+            "seconds"
+        ).textContent = "00";
+
+        return;
+
+    }
+
+
+    const days =
+        Math.floor(
+            distance /
+            (1000 * 60 * 60 * 24)
+        );
+
+
+    const hours =
+        Math.floor(
+            (
+                distance %
+                (1000 * 60 * 60 * 24)
+            ) /
+            (1000 * 60 * 60)
+        );
+
+
+    const minutes =
+        Math.floor(
+            (
+                distance %
+                (1000 * 60 * 60)
+            ) /
+            (1000 * 60)
+        );
+
+
+    const seconds =
+        Math.floor(
+            (
+                distance %
+                (1000 * 60)
+            ) /
+            1000
+        );
+
+
+    document.getElementById(
+        "days"
+    ).textContent =
+        String(days).padStart(
+            2,
+            "0"
+        );
+
+
+    document.getElementById(
+        "hours"
+    ).textContent =
+        String(hours).padStart(
+            2,
+            "0"
+        );
+
+
+    document.getElementById(
+        "minutes"
+    ).textContent =
+        String(minutes).padStart(
+            2,
+            "0"
+        );
+
+
+    document.getElementById(
+        "seconds"
+    ).textContent =
+        String(seconds).padStart(
+            2,
+            "0"
+        );
+
+}
+
+
+/* =========================================================
+   RUN COUNTDOWN
+========================================================= */
+
+updateCountdown();
+
+
+setInterval(
+    updateCountdown,
+    1000
+);
+
+
+/* =========================================================
+   VIDEO ERROR CHECK
+========================================================= */
+
+openingVideo.addEventListener(
+    "error",
+    function(){
+
+        console.log(
+            "Opening video not found. Check vanakkam.mp4"
+        );
+
+    }
+);
+
+
+mainVideo.addEventListener(
+    "error",
+    function(){
+
+        console.log(
+            "Main video not found. Check vanakkam.mp4"
+        );
+
+    }
+);
+
+
+/* Prevent a broken-image icon from disrupting the mobile layout.
+   The actual file name should still exactly match the repository file. */
+document.querySelectorAll("img").forEach(function(img){
+    img.addEventListener("error", function(){
+        this.style.display = "none";
+    });
+});
+
+</script>
+
+
+</body>
+</html>
